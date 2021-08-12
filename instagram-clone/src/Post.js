@@ -17,7 +17,7 @@ function Post() {
 
             <img className="post__image" src="https://wallpaper.dog/large/10882397.jpg"/>
             {/* image */}
-            <h4 className="post__text"><strong>hyeop_92</strong>shyoup </h4>
+            <h4 className="post__text"><strong>hyeop_92</strong>  shyoup</h4>
             {/* username + caption */}
         </div>
     )
