@@ -13,7 +13,7 @@ function App() {
         />
       </div>
 
-      <Post />
+      <Post username="sang" caption="WOW" imageUrl="https://i.pinimg.com/originals/f5/25/6f/f5256f22b9dea5d4eb80c41f91f87793.jpg"/>
       <Post />
       <Post />
       {/* Header */}
