@@ -1,8 +1,19 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Post from './Post'
+import { db } from './firebase'
 
 function App() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    // this is where the code runs
+    db.collection('posts').onSnapshot(snapshot => {
+      // every time a new post is added, this code fired!!
+      setPosts(snapshot.docs.map(doc => doc.data()));
+    })
+  }, [])
+
   return (
     <div className="app">
       <div className="app__header">
@@ -13,12 +24,11 @@ function App() {
         />
       </div>
 
-      <Post username="sang" caption="WOW" imageUrl="https://i.pinimg.com/originals/f5/25/6f/f5256f22b9dea5d4eb80c41f91f87793.jpg"/>
-      <Post />
-      <Post />
-      {/* Header */}
-      {/* Post */}
-      {/* Post */}
+      {
+        posts.map(post => (
+          <Post username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
+        ))
+      }
     </div>
   );
 }
