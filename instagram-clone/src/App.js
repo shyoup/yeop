@@ -69,7 +69,7 @@ function App() {
 
   useEffect(() => {
     // this is where the code runs
-    db.collection('posts').onSnapshot(snapshot => {
+    db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       // every time a new post is added, this code fired!!
       setPosts(snapshot.docs.map(doc => ({
         id : doc.id,
@@ -102,7 +102,11 @@ function App() {
 
   return (
     <div className="app">
-      <ImageUpload></ImageUpload>
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName}></ImageUpload>
+      ): (
+        <h3>Sorry you need to login to upload</h3>
+      )}
       <Modal
         open={open}
         onClose={() => setOpen(false)}
