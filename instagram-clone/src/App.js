@@ -107,7 +107,7 @@ function App() {
         onClose={() => setOpen(false)}
         >
         <div style={modalStyle} className={classes.paper}>
-          <form className="app_signup">
+          <form className="app__signup">
             <center>
               <img
                 className="app__headerImage"
@@ -169,34 +169,39 @@ function App() {
       </Modal>
 
       <div className="app__header">
-        <img
-          className="app__headerImage"
-          src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
-          alt=""
-        />
-        {user ? (
-          <Button onClick={() => auth.signOut()}>Logout</Button>
-        ): (
-          <div className="app__loginContainer">
-            <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
-            <Button onClick={() => setOpen(true)}>Sign up</Button>
-          </div>
-        )}
+        <div className="app__headerContainer">
+          <img
+            className="app__headerImage"
+            src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+            alt=""
+          />
+          {user ? (
+            <Button onClick={() => auth.signOut()}>Logout</Button>
+          ): (
+            <div className="app__loginContainer">
+              <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
+              <Button onClick={() => setOpen(true)}>Sign up</Button>
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className="app__posts">
-        {
-          posts.map(({id, post}) => (
-            <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
-          ))
-        }
+      <div className="app__main">
+        <div className="app__posts">
+          {
+            posts.map(({id, post}) => (
+              <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
+            ))
+          }
+        </div>
+        <div className="app__upload">
+          {user?.displayName ? (
+            <ImageUpload username={user.displayName}></ImageUpload>
+          ): (
+            <h3>Sorry you need to login to upload</h3>
+          )}
+        </div>
       </div>
-
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName}></ImageUpload>
-      ): (
-        <h3>Sorry you need to login to upload</h3>
-      )}
     </div>
   );
 }
