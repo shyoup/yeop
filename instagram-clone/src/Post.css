@@ -1,8 +1,15 @@
+@font-face {
+    font-family: "noto-sans";
+    src: url("./fonts/NotoSansKR-Medium.otf");
+}
+
 .post {
     background-color: white;
     max-width: 614px;
     border: 1px solid lightgray;
     margin: 25px auto;
+    font-family: "noto-sans";
+    font-size: 12px;
 }
 
 .post__image {
@@ -13,27 +20,35 @@
 }
 
 .post__text {
-    font-weight: normal;
-    padding: 20px;
+    font-weight: lighter;
+    padding: 5px 10px 5px 10px;
 }
 
 .post__header {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 16px;
+    color:rgb(75, 75, 75);
+    height: 27px;
+    font-family: "noto-sans";
+    font-size: 12px;
 }
 
 .post__avatar {
     margin-right: 10px;
+    max-width: 30px;
+    max-height: 30px;
 }
 
 .post__commentBox {
     display: flex;
     margin-top: 10px;
+    font-family: "noto-sans";
+    font-size: 12px;
 }
 
 .post__comments {
-    padding: 20px;
+    padding: 5px 10px 5px 10px;
 }
 
 .post__input {
@@ -44,7 +59,9 @@
 }
 
 .post__button {
-    flex: 0;
     border: none;
     border-top: 1px solid lightgray;
+    background-color: white;
+    font-weight: 600;
+    color:rgb(0, 173, 185)
 }
