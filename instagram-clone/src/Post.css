@@ -69,3 +69,9 @@
     font-weight: 600;
     color:rgb(0, 173, 185)
 }
+
+.post__timestr {
+    padding: 5px 10px 5px 10px;
+    font-size: 8px;
+    color: darkgray;
+}

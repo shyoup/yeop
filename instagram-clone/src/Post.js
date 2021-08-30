@@ -4,7 +4,35 @@ import Avatar from '@material-ui/core/Avatar'
 import { db } from './firebase';
 import firebase from 'firebase';
 
-function Post({ postId, user, username, caption, imageUrl }) {
+function PostTime({ timeStr }) {
+    let date = new Date(timeStr);
+    let curDate = new Date();
+    let result = '';
+
+    const elapsedMin = parseInt((curDate - date) / 1000 / 60);
+    const elapsedHour = parseInt((curDate - date) / 1000 / 60 / 60);
+    const elapsedDay = parseInt((curDate - date) / 1000 / 60 / 60 / 24);
+    const elapsedWeek = parseInt((curDate - date) / 1000 / 60 / 60 / 24 / 7);
+    if(elapsedHour < 1) {
+        result = `${elapsedMin}분 전`;
+    }
+    else if(elapsedDay < 1) {
+        result = `${elapsedHour}시간 전`;
+    }
+    else if(elapsedWeek < 1) {
+        result = `${elapsedDay}일 전`;
+    }
+    else {
+        result = `${elapsedWeek}주 전`;
+    }
+    return (
+        <div className="post__timestr">
+            {result}
+        </div>
+    )
+}
+
+function Post({ postId, user, username, caption, imageUrl, timeStr }) {
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState([]);
     useEffect(() => {
@@ -55,6 +83,8 @@ function Post({ postId, user, username, caption, imageUrl }) {
                     </p>
                 ))}
             </div>
+
+            <PostTime timeStr={timeStr}/>
 
             {user && (
                 <form className="post__commentBox">

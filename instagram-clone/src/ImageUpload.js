@@ -34,6 +34,7 @@ function ImageUpload({username}) {
             },
             () => {
                 //complete function ....
+                let date = new Date();
                 storage
                     .ref("images")
                     .child(image.name)
@@ -42,6 +43,7 @@ function ImageUpload({username}) {
                         // post image inside db
                         db.collection("posts").add({
                             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                            timeStr: date.toString(),
                             caption: caption,
                             imageUrl: url,
                             username: username
