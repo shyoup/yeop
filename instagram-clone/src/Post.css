@@ -58,6 +58,10 @@
     border-top: 1px solid lightgray;
 }
 
+.post__input:focus {
+    outline: none;
+}
+
 .post__button {
     border: none;
     border-top: 1px solid lightgray;
