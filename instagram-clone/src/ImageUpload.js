@@ -51,6 +51,8 @@ function ImageUpload({username}) {
                         setProgress(0);
                         setCaption("");
                         setImage(null);
+                        document.getElementById("post_input").value = null;
+                        document.getElementById("file_input").value = null;
                     });
             }
         )
@@ -59,8 +61,8 @@ function ImageUpload({username}) {
     return (
         <div className="imageupload">
             <progress className="imageupload__progress" value={progress} max="100" />
-            <input type="text" placeholder='Enter a caption...' onChange={event => setCaption(event.target.value)}/>
-            <input type="file" onChange={handleChange}/>
+            <input id="post_input" type="text" placeholder='Enter a caption...' onChange={event => setCaption(event.target.value)}/>
+            <input id="file_input" type="file" onChange={handleChange}/>
             <Button onClick={handleUpload}>
                 Upload
             </Button>
