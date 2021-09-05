@@ -1,6 +1,12 @@
 # Instagram Clone Coding
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Firebase deploy [Instagram-clone URL](https://instagram-clone-react-2ac17.web.app/).
+
+ToDo List
+1. 좋아요 기능
+2. 댓글 ~개 모두 보기
+3. 반응형 웹 만들기
 
 ## Available Scripts
 
