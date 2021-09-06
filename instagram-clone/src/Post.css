@@ -75,3 +75,22 @@
     font-size: 8px;
     color: darkgray;
 }
+
+.post__replybox {
+    height: 40px;
+}
+
+.post__replybox__heart {
+    padding: 5px 10px 5px 10px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.post__replybox__heart:active {
+    animation: beat .25s 1 alternate;
+}
+
+/* Heart beat animation */
+@keyframes beat{
+	to { transform: scale(1.2); }
+}

@@ -32,6 +32,14 @@ function PostTime({ timeStr }) {
     )
 }
 
+function ReplyBox({callBackFunc}) {
+    return (
+        <div className="post__replybox">
+            <img className="post__replybox__heart" src="./fingerHeart.png" onClick={callBackFunc}/>
+        </div>
+    )
+}
+
 function Post({ postId, user, username, caption, imageUrl, timeStr }) {
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState([]);
@@ -63,6 +71,20 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
         setComment('');
     }
 
+    const likePost = (event) => {
+        event.preventDefault();
+        let imgPath = event.target.src;
+        if(imgPath.includes(`colorFingerHeart.png`)) {
+            event.target.src = "./fingerHeart.png";
+            // console.log(db.collection("posts").doc(postId).collection("likes"));
+        } else {
+            event.target.src = "./colorFingerHeart.png";
+            // db.collection("posts").doc(postId).collection("likes").add({
+            //     userId: user.uid,
+            // });
+        }
+    }
+
     return (
         <div className="post">
             <div className="post__header">
@@ -74,6 +96,7 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
                 {username}
             </div>
             <img className="post__image" src={imageUrl}/>
+            <ReplyBox callBackFunc={likePost}/>
             <h4 className="post__text"><strong>{username}</strong> {caption}</h4>
 
             <div className="post__comments">
