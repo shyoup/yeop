@@ -1,3 +1,5 @@
+// sorting 된 배열을 복사해서 변수에 저장하고 싶다면 slice()를 사용하자
+
 function solution(priorities, location) {
     let answer = 0;
     let sortedPriorities = priorities.slice().sort((a,b)=>b-a);
