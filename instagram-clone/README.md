@@ -74,3 +74,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Error 수정
+firebase error - [blog](https://fomaios.tistory.com/entry/Firebase-Error-%ED%95%B4%EA%B2%B0%EB%B2%95-%ED%8F%AC%ED%95%A8-Missing-or-insufficient-permissions)
