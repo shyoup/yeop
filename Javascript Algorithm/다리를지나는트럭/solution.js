@@ -1,3 +1,27 @@
+/* function solution(bridge_length, weight, truck_weights) {
+    var answer = 0;
+    let bridge = new Array(bridge_length).fill(0);
+    let cur_weight = 0;
+    while(truck_weights.length > 0 || cur_weight > 0) {
+    answer++;
+    if(cur_weight + truck_weights[0] <= weight) { // 다리에 올라갈 수 있을 때
+        bridge.unshift(truck_weights[0]);
+        cur_weight += truck_weights[0];
+        truck_weights.shift();
+    } else {
+        bridge.unshift(0);
+        if(bridge[bridge.length -1] > 0) {
+            cur_weight -= bridge[bridge.length -1];
+            if(cur_weight === 0)
+            answer--;
+        }
+    }
+    bridge.pop();
+}
+return ++answer;
+}
+ */  // 시간초과 코드
+
 function solution(bridge_length, weight, truck_weights) {
     var answer = 0;
     let queue = [];
