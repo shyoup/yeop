@@ -49,7 +49,6 @@ return ++answer;
 //     }    
 //     return answer;
 // }
-
 function solution(bridge_length, weight, truck_weights) {
     let cur_weight = 0;
     let answer = 0;
@@ -80,3 +79,5 @@ function solution(bridge_length, weight, truck_weights) {
     }
     return answer;
 }
+
+console.log(solution(100, 100, [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]));
