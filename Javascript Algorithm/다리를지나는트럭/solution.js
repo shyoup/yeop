@@ -1,83 +1,23 @@
-/* function solution(bridge_length, weight, truck_weights) {
-    var answer = 0;
-    let bridge = new Array(bridge_length).fill(0);
-    let cur_weight = 0;
-    while(truck_weights.length > 0 || cur_weight > 0) {
-    answer++;
-    if(cur_weight + truck_weights[0] <= weight) { // 다리에 올라갈 수 있을 때
-        bridge.unshift(truck_weights[0]);
-        cur_weight += truck_weights[0];
-        truck_weights.shift();
-    } else {
-        bridge.unshift(0);
-        if(bridge[bridge.length -1] > 0) {
-            cur_weight -= bridge[bridge.length -1];
-            if(cur_weight === 0)
-            answer--;
-        }
-    }
-    bridge.pop();
-}
-return ++answer;
-}
- */  // 시간초과 코드
-
-// function solution(bridge_length, weight, truck_weights) {
-//     var answer = 0;
-//     let queue = [];
-//     for(let i=truck_weights.length; i>0; i--) {
-//         queue.push(truck_weights[i-1]);
-//     }
-//     let bridge = [0];
-//     let cur_weight = -1;
-//     while(queue.length > 0 || cur_weight !== 0) {
-//         answer++;
-//         let top = queue[queue.length - 1] ? queue[queue.length - 1] : 0;
-//         if(cur_weight + top > weight) { // 다리에 더이상 올라갈 수 없을 때
-//             bridge.unshift(0);
-//             if(bridge[bridge.length -1] > 0)
-//                 cur_weight -= bridge[bridge.length -1];
-//             bridge.pop();
-//         } else {    // 다리 트럭이 더 지나갈 수 있을 때
-//             bridge.unshift(top);
-//             if(cur_weight === -1)
-//                 cur_weight = top;
-//             else
-//                 cur_weight += top;
-//             queue.pop();
-//         }
-//     }    
-//     return answer;
-// }
 function solution(bridge_length, weight, truck_weights) {
+    let bridge = new Array(bridge_length).fill(0);    // 트럭이 지나가는 다리    new Array(size)를 하면 사이즈가 정해진 array를 만들수 있음.
+    // fill을 사용하면 0으로 초기화 가능
     let cur_weight = 0;
-    let answer = 0;
-    let onBridge = [];
-    let rest = [];
+    let time = 0;
     while(1) {
-        let _size = rest.length;
-        for(let i =0; i<_size; i++) {
-            let restLength = rest[0];
-            rest.shift();
-            if(restLength <= 1) {
-                cur_weight -= onBridge[0];
-                onBridge.shift();
-                continue;
-            }
-            rest.push(restLength - 1);
+        if(cur_weight === 0 && truck_weights.length === 0) break;    // 다리위의 트럭이 없고 지나갈 트럭이 없으면 계산 종료
+        let truck = bridge[bridge.length-1];
+        if(truck > 0) {
+            cur_weight -= truck;
         }
-        
-        if(truck_weights.length > 0 && truck_weights[0] + cur_weight <= weight) {
-            cur_weight += truck_weights[0];
-            onBridge.push(truck_weights[0]);
-            rest.push(bridge_length);
-            truck_weights.shift();
+        bridge.pop();      // 일단 시간이 1초 흐르면 배열에서 하나를 꺼낸다
+        time++;            // 시간이 1초 지남을 의미
+        if(cur_weight + truck_weights[0] <= weight) {   // 다리에 트럭이 지나갈 수 있을 때
+            let truck = truck_weights.shift();
+            bridge.unshift(truck);                      // 트럭을 넣는다
+            cur_weight += truck;
+        } else {                                        // 다리에 트럭이 못지나갈떄
+            bridge.unshift(0);                          // 0을 넣는다
         }
-        answer++;
-        if(cur_weight == 0 && truck_weights.length == 0)
-            break;
-    }
-    return answer;
+    }    
+    return time;
 }
-
-console.log(solution(100, 100, [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]));
