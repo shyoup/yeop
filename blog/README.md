@@ -1,6 +1,8 @@
 # BLOG HISTORY 정리
 
 ## HISTORY
+2021.11.08 [[Node.js] 특징 및 장단점](https://sanghyeopsang.tistory.com/28)
+
 2021.10.30 [Etc] 필기시험 후기 (비공개 게시글)
 
 2021.10.22 [[Etc] XSD 유용한 툴 정리](https://sanghyeopsang.tistory.com/26)
