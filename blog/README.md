@@ -1,6 +1,8 @@
 # BLOG HISTORY 정리
 
 ## HISTORY
+2021.12.05 [[JavaScript] 데이터 타입 정리](https://sanghyeopsang.tistory.com/30)
+
 2021.11.24 [[Algorithm] 에라토스테네스의 체 - 설명 및 구현](https://sanghyeopsang.tistory.com/29)
 
 2021.11.08 [[Node.js] 특징 및 장단점](https://sanghyeopsang.tistory.com/28)
