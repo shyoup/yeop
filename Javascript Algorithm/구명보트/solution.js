@@ -22,6 +22,8 @@ function solution(people, limit) {
 
 // console.log(solution([70, 50, 80, 50], 100));
 // console.log(solution([70, 80, 50], 100));
+let answer = 0;
+
 console.log(solution([40, 40, 40,40, 50, 50, 50, 50], 130));  // 여기서 틀림
 
 
@@ -48,13 +50,10 @@ console.log(solution([40, 40, 40,40, 50, 50, 50, 50], 130));  // 여기서 틀�
 // 테스트 4 〉	실패 (런타임 에러)
 // 테스트 5 〉	실패 (런타임 에러)
 
-
-
 function calculate(newPeople, limit, rest, cnt, curBoat) {
     if(newPeople.length < 1 && curBoat === 1) {
-        return cnt+1;
-    } else if (newPeople.length < 1) {
-       return cnt;
+        answer++;
+        return [];
     }
     for(let i=0; i<newPeople.length; i++) {
         if(newPeople[i] < 40 || newPeople[i] > 240) return -1;
@@ -65,7 +64,9 @@ function calculate(newPeople, limit, rest, cnt, curBoat) {
         }
     }
     if(rest < 40 || curBoat === 1) {
-        return calculate(newPeople, limit, limit, ++cnt, 0);
+        answer++;
+        // return calculate(newPeople, limit, limit, ++cnt, 0);
+        return newPeople;
     }
     return calculate(newPeople, limit, rest, cnt, 1);
 }
@@ -74,7 +75,11 @@ function solution(people, limit) {
     if(people.length > 50000 || people.length < 1) return -1;
     if(limit < 40 || limit > 240) return -1;
     const sortedPeople = people.sort((a,b) => b-a);
-    return calculate(sortedPeople, limit, limit, 0, 0);
+    while(1) {
+        const ret = calculate(sortedPeople, limit, limit, 0, 0);
+        if(ret.length < 1) break;
+    }
+    return answer;
 }
 /*
 정확성  테스트
