@@ -112,3 +112,4 @@ function solution(number, k) {
 // 테스트 10 〉	실패 (signal: aborted (core dumped))
 // 테스트 11 〉	통과 (0.08ms, 30.2MB)
 // 테스트 12 〉	실패 (0.11ms, 30.3MB)
+// 여기서 보면 slice 보다 substring이 더 오래 걸리는 것을 알 수 있다...
