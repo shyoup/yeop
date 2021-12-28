@@ -1,6 +1,8 @@
 # BLOG HISTORY 정리
 
 ## HISTORY
+2021.12.28 [[웹개발] REST API URI 7가지 규칙](https://sanghyeopsang.tistory.com/33)
+
 2021.12.22 [[JavaScript] undefined와 null](https://sanghyeopsang.tistory.com/32)
 
 2021.12.14 [[Algorithm] 주요 언어별 재귀 최대 stack depth](https://sanghyeopsang.tistory.com/31)
