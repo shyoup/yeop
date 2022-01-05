@@ -1,6 +1,8 @@
 # BLOG HISTORY 정리
 
 ## HISTORY
+2022.1.5 [[React] Mobx 유용한 글 정리](https://sanghyeopsang.tistory.com/35)
+
 2022.1.3 [[CSS] Flex 유용한 글 저장](https://sanghyeopsang.tistory.com/34)
 
 2021.12.28 [[웹개발] REST API URI 7가지 규칙](https://sanghyeopsang.tistory.com/33)
