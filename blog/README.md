@@ -1,6 +1,8 @@
 # BLOG HISTORY 정리
 
 ## HISTORY
+2022.1.6 [[CSS] 미디어 쿼리 (Media Query)](https://sanghyeopsang.tistory.com/36)
+
 2022.1.5 [[React] Mobx 유용한 글 정리](https://sanghyeopsang.tistory.com/35)
 
 2022.1.3 [[CSS] Flex 유용한 글 저장](https://sanghyeopsang.tistory.com/34)
