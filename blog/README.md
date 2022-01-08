@@ -1,7 +1,7 @@
 # BLOG HISTORY 정리
 
 ## HISTORY
-2022.1.7 [[Javascript] 실행 컨텍스트](https://sanghyeopsang.tistory.com/37)
+2022.1.7 [[Javascript] 실행 컨텍스트 (1)](https://sanghyeopsang.tistory.com/37)
 
 2022.1.6 [[CSS] 미디어 쿼리 (Media Query)](https://sanghyeopsang.tistory.com/36)
 
