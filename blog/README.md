@@ -1,6 +1,8 @@
 # BLOG HISTORY 정리
 
 ## HISTORY
+2022.1.10 [[DB] 오라클, 티베로 계층형 쿼리 간단 정리 (START WITH, CONNECT BY)](https://sanghyeopsang.tistory.com/38)
+
 2022.1.7 [[Javascript] 실행 컨텍스트 (1)](https://sanghyeopsang.tistory.com/37)
 
 2022.1.6 [[CSS] 미디어 쿼리 (Media Query)](https://sanghyeopsang.tistory.com/36)
