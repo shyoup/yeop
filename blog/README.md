@@ -1,6 +1,8 @@
 # BLOG HISTORY 정리
 
 ## HISTORY
+2022.2.24 [[JavaScript] 실행 컨텍스트 (2) - 호이스팅](https://sanghyeopsang.tistory.com/40)
+
 2022.2.21 [[Algorithm] 크루스칼 알고리즘](https://sanghyeopsang.tistory.com/39)
 
 2022.1.10 [[DB] 오라클, 티베로 계층형 쿼리 간단 정리 (START WITH, CONNECT BY)](https://sanghyeopsang.tistory.com/38)
