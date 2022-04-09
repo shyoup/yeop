@@ -84,21 +84,21 @@ console.log(solution("0000", 3));
 // 테스트 12 〉	실패 (0.13ms, 30.2MB)
 
 
-function calculate(ret, strArr, count) {
-    if(count < 1 || strArr.length === 0) return ret.concat(strArr);
-    let checkStr = strArr.slice(0, count+1);
-    let biggestNum = checkStr.sort((a,b)=>b-a)[0];
-    ret.push(biggestNum);
-    let idx = strArr.indexOf(biggestNum);
-    return calculate(ret, strArr.slice(idx+1), count-idx);
-}
+// function calculate(ret, strArr, count) {
+//     if(count < 1 || strArr.length === 0) return ret.concat(strArr);
+//     let checkStr = strArr.slice(0, count+1);
+//     let biggestNum = checkStr.sort((a,b)=>b-a)[0];
+//     ret.push(biggestNum);
+//     let idx = strArr.indexOf(biggestNum);
+//     return calculate(ret, strArr.slice(idx+1), count-idx);
+// }
 
-function solution(number, k) {
-    let cal = [];
-    let ret = calculate(cal, number.split(''), k);
-    if(ret[0] === "0") return "0";
-    return ret.join('');
-}
+// function solution(number, k) {
+//     let cal = [];
+//     let ret = calculate(cal, number.split(''), k);
+//     if(ret[0] === "0") return "0";
+//     return ret.join('');
+// }
 
 // 테스트 1 〉	통과 (0.12ms, 30.3MB)
 // 테스트 2 〉	통과 (0.12ms, 30.2MB)
