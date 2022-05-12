@@ -1,6 +1,8 @@
 # BLOG HISTORY 정리
 
 ## HISTORY
+2022.5.12 [[JavaScript] ES6 화살표 함수](https://sanghyeopsang.tistory.com/42)
+
 2022.2.28 [[JavaScript] 실행 컨텍스트 (3) - 스코프, 스코프체인](https://sanghyeopsang.tistory.com/41)
 
 2022.2.24 [[JavaScript] 실행 컨텍스트 (2) - 호이스팅](https://sanghyeopsang.tistory.com/40)
