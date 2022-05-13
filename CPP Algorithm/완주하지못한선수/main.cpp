@@ -16,5 +16,5 @@ string solution(vector<string> participant, vector<string> completion) {
             break;
         }
     }
-    return answer;
+    return answer; // O(NlogN)
 }
