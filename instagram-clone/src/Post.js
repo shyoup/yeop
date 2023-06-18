@@ -95,7 +95,9 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
                 ></Avatar>
                 {username}
             </div>
-            <img className="post__image" src={imageUrl}/>
+            <div className="image_wrapper">
+                <img className="post__image" srcSet={imageUrl}/>
+            </div>
             <ReplyBox callBackFunc={likePost}/>
             <h4 className="post__text"><strong>{username}</strong> {caption}</h4>
 
