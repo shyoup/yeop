@@ -35,7 +35,8 @@ function PostTime({ timeStr }) {
 function ReplyBox({callBackFunc}) {
     return (
         <div className="post__replybox">
-            <img className="post__replybox__heart" src="./fingerHeart.png" onClick={callBackFunc}/>
+            <img alt="heart" className="post__replybox__heart" src="./fingerHeart.png" onClick={callBackFunc.likePost} draggable="false" />
+            <img alt="comment" className="post__replybox__heart" src="./comment.png" onClick={callBackFunc.commentPost} draggable="false" />
         </div>
     )
 }
@@ -71,7 +72,15 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
         setComment('');
     }
 
+    function addAnimation(event) {
+        event.target.classList.add('animation_btn');
+        setTimeout(() => {
+            event.target.classList.remove('animation_btn');
+        }, 1000);
+    }
+
     const likePost = (event) => {
+        addAnimation(event);
         event.preventDefault();
         let imgPath = event.target.src;
         if(imgPath.includes(`colorFingerHeart.png`)) {
@@ -85,6 +94,11 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
         }
     }
 
+    const commentPost = (event) => {
+        addAnimation(event);
+    }
+
+    const callbackObject = {likePost, commentPost};
     return (
         <div className="post">
             <div className="post__header">
@@ -98,7 +112,10 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
             <div className="image_wrapper">
                 <img className="post__image" srcSet={imageUrl}/>
             </div>
-            <ReplyBox callBackFunc={likePost}/>
+            <div className="post__replybox">
+                <ReplyBox callBackFunc={callbackObject}/>
+
+            </div>
             <h4 className="post__text"><strong>{username}</strong> {caption}</h4>
 
             <div className="post__comments">
