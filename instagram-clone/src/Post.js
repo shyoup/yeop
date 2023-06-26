@@ -44,6 +44,7 @@ function ReplyBox({callBackFunc}) {
 function Post({ postId, user, username, caption, imageUrl, timeStr }) {
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState([]);
+    const [likeCnt, setLikeCnt] = useState(0);
     useEffect(() => {
         let unsubscribe;
         if(postId) {
@@ -76,22 +77,26 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
         event.target.classList.add('animation_btn');
         setTimeout(() => {
             event.target.classList.remove('animation_btn');
-        }, 1000);
+        }, 300);
     }
 
     const likePost = (event) => {
         addAnimation(event);
         event.preventDefault();
         let imgPath = event.target.src;
+        let like = likeCnt;
         if(imgPath.includes(`colorFingerHeart.png`)) {
             event.target.src = "./fingerHeart.png";
+            --like
             // console.log(db.collection("posts").doc(postId).collection("likes"));
         } else {
             event.target.src = "./colorFingerHeart.png";
+            ++like;
             // db.collection("posts").doc(postId).collection("likes").add({
             //     userId: user.uid,
             // });
         }
+        setLikeCnt(like);
     }
 
     const commentPost = (event) => {
@@ -115,6 +120,9 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
             <div className="post__replybox">
                 <ReplyBox callBackFunc={callbackObject}/>
 
+            </div>
+            <div className='post__text'>
+                <strong>좋아요 {likeCnt}개</strong>
             </div>
             <h4 className="post__text"><strong>{username}</strong> {caption}</h4>
 

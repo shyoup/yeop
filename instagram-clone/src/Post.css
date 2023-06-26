@@ -104,7 +104,7 @@
 }
 
 .animation_btn {
-    animation: beat .25s 1 alternate;
+    animation: beat .1s 1 alternate;
 }
 
 /* Heart beat animation */
