@@ -14,20 +14,20 @@ function PostTime({ timeStr }) {
     const elapsedDay = parseInt((curDate - date) / 1000 / 60 / 60 / 24);
     const elapsedWeek = parseInt((curDate - date) / 1000 / 60 / 60 / 24 / 7);
     if(elapsedHour < 1) {
-        result = `${elapsedMin}분`;
+        result = `${elapsedMin}분 전`;
     }
     else if(elapsedDay < 1) {
-        result = `${elapsedHour}시간`;
+        result = `${elapsedHour}시간 전`;
     }
     else if(elapsedWeek < 1) {
-        result = `${elapsedDay}일`;
+        result = `${elapsedDay}일 전`;
     }
     else {
-        result = `${elapsedWeek}주`;
+        result = `${elapsedWeek}주 전`;
     }
     return (
         <div className="post__timestr">
-            • {result}
+            {result}
         </div>
     )
 }
@@ -113,7 +113,6 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
                     src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/201111416_208072207837303_993554199430242986_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=qy00gAkB3QsAX_eUqYY&edm=AP_V10EBAAAA&ccb=7-4&oh=e6e6b21cd528e189ab919e86a150a31e&oe=611B6432&_nc_sid=4f375e"
                 ></Avatar>
                 {username}
-                <PostTime timeStr={timeStr}/>
             </div>
             <div className="image_wrapper">
                 <img className="post__image" srcSet={imageUrl}/>
@@ -134,6 +133,8 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
                     </p>
                 ))}
             </div>
+
+            <PostTime timeStr={timeStr}/>
 
             {user && (
                 <form className="post__commentBox">
