@@ -116,7 +116,12 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
                 <PostTime timeStr={timeStr}/>
             </div>
             <div className="image_wrapper">
-                <img className="post__image" srcSet={imageUrl}/>
+                {
+                    Array(imageUrl).isArray() ??
+                        imageUrl.map((image) => (
+                            <img className="post__image" srcSet={image}/>
+                        ))
+                }
             </div>
             <div className="post__replybox">
                 <ReplyBox callBackFunc={callbackObject}/>
