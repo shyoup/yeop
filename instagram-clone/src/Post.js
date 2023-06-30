@@ -117,10 +117,9 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
             </div>
             <div className="image_wrapper">
                 {
-                    imageUrl.isArray ?
-                        imageUrl.map((image) => (
-                            <img className="post__image" srcSet={image}/>
-                        )) : <img className="post__image" srcSet={imageUrl}/>
+                    imageUrl.map((image) => (
+                        <img className="post__image" srcSet={image}/>
+                    ))
                 }
             </div>
             <div className="post__replybox">
