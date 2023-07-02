@@ -4,6 +4,8 @@ import Avatar from '@material-ui/core/Avatar'
 import { db } from './firebase';
 import firebase from 'firebase';
 
+import PostImage from './PostImage';
+
 function PostTime({ timeStr }) {
     let date = new Date(timeStr);
     let curDate = new Date();
@@ -115,13 +117,7 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
                 {username}
                 <PostTime timeStr={timeStr}/>
             </div>
-            <div className="image_wrapper">
-                {
-                    imageUrl.map((image) => (
-                        <img className="post__image" srcSet={image}/>
-                    ))
-                }
-            </div>
+            <PostImage imageList={imageUrl} />
             <div className="post__replybox">
                 <ReplyBox callBackFunc={callbackObject}/>
 

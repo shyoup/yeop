@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "noto-sans";
+    src: url("./fonts/NotoSansKR-Medium.otf");
+}
+
+.image_container {
+    position: relative;
+}
+
+.image_wrapper2 {
+    display: flex;
+    transition: 0.6s;
+}
+
+.image_wrapper {
+    overflow: hidden;
+    display: flex;
+    width: 500px;
+    height: 500px;
+}
+
+.image_wrapper2 img {
+    top: 0;
+    left: 0;
+    transform: translate(50, 50);
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    margin: auto;
+    border: 0;
+}
+
+.post__image {
+    width: 100%;
+    object-fit: contain;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.left {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.left img {
+    width: 20px;
+}
+
+.right {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.right img {
+    width: 20px;
+}
