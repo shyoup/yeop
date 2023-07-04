@@ -116,6 +116,7 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
                 ></Avatar>
                 {username}
                 <PostTime timeStr={timeStr}/>
+                <img className='post__more_button' src='./more_button.png'></img>
             </div>
             <PostImage imageList={imageUrl} />
             <div className="post__replybox">

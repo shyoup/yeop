@@ -89,6 +89,11 @@
     object-fit: contain;
 }
 
+.post__more_button {
+    width: 24px;
+    margin-left: auto;
+}
+
 .animation_btn {
     animation: beat .1s 1 alternate;
 }
