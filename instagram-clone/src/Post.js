@@ -4,7 +4,60 @@ import Avatar from '@material-ui/core/Avatar'
 import { db } from './firebase';
 import firebase from 'firebase';
 
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Dialog from '@mui/material/Dialog';
+import PersonIcon from '@mui/icons-material/Person';
+import AddIcon from '@mui/icons-material/Add';
+
 import PostImage from './PostImage';
+
+function SimpleDialog(props) {
+    const { onClose, selectedValue, open } = props;
+
+    const handleClose = () => {
+        onClose(selectedValue);
+    };
+
+    const handleListItemClick = (value) => {
+        onClose(value);
+    };
+
+    return (
+    <Dialog onClose={handleClose} open={open}>
+        <DialogTitle>Set backup account</DialogTitle>
+        <List sx={{ pt: 0 }}>
+            <ListItem disableGutters>
+                <ListItemButton>
+                <ListItemAvatar>
+                    <Avatar>
+                    <PersonIcon />
+                    </Avatar>
+                </ListItemAvatar>
+                <ListItemText />
+                </ListItemButton>
+            </ListItem>
+        <ListItem disableGutters>
+            <ListItemButton
+                autoFocus
+                onClick={() => handleListItemClick('addAccount')}
+            >
+                <ListItemAvatar>
+                <Avatar>
+                    <AddIcon />
+                </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Add account" />
+            </ListItemButton>
+            </ListItem>
+        </List>
+        </Dialog>
+    );
+}
 
 function PostTime({ timeStr }) {
     let date = new Date(timeStr);
@@ -116,7 +169,7 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
                 ></Avatar>
                 {username}
                 <PostTime timeStr={timeStr}/>
-                <img className='post__more_button' src='./more_button.png'></img>
+                <img className='post__more_button' onClick='' src='./more_button.png'></img>
             </div>
             <PostImage imageList={imageUrl} />
             <div className="post__replybox">
@@ -155,6 +208,7 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
                     </button>
                 </form>
             )}
+            <SimpleDialog  />
         </div>
     )
 }
