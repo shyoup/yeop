@@ -11,8 +11,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-import PersonIcon from '@mui/icons-material/Person';
-import AddIcon from '@mui/icons-material/Add';
 
 import PostImage from './PostImage';
 
@@ -35,7 +33,6 @@ function SimpleDialog(props) {
                 <ListItemButton>
                 <ListItemAvatar>
                     <Avatar>
-                    <PersonIcon />
                     </Avatar>
                 </ListItemAvatar>
                 <ListItemText />
@@ -48,7 +45,6 @@ function SimpleDialog(props) {
             >
                 <ListItemAvatar>
                 <Avatar>
-                    <AddIcon />
                 </Avatar>
                 </ListItemAvatar>
                 <ListItemText primary="Add account" />
