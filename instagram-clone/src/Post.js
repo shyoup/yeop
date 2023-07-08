@@ -1,59 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './Post.css'
-import Avatar from '@material-ui/core/Avatar'
+import { Avatar } from '@mui/material';
 import { db } from './firebase';
 import firebase from 'firebase';
 
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Dialog from '@mui/material/Dialog';
-
 import PostImage from './PostImage';
-
-function SimpleDialog(props) {
-    const { onClose, selectedValue, open } = props;
-
-    const handleClose = () => {
-        onClose(selectedValue);
-    };
-
-    const handleListItemClick = (value) => {
-        onClose(value);
-    };
-
-    return (
-    <Dialog onClose={handleClose} open={open}>
-        <DialogTitle>Set backup account</DialogTitle>
-        <List sx={{ pt: 0 }}>
-            <ListItem disableGutters>
-                <ListItemButton>
-                <ListItemAvatar>
-                    <Avatar>
-                    </Avatar>
-                </ListItemAvatar>
-                <ListItemText />
-                </ListItemButton>
-            </ListItem>
-        <ListItem disableGutters>
-            <ListItemButton
-                autoFocus
-                onClick={() => handleListItemClick('addAccount')}
-            >
-                <ListItemAvatar>
-                <Avatar>
-                </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary="Add account" />
-            </ListItemButton>
-            </ListItem>
-        </List>
-        </Dialog>
-    );
-}
+import DialogComponent from './common/DialogComponent';
 
 function PostTime({ timeStr }) {
     let date = new Date(timeStr);
@@ -204,7 +156,7 @@ function Post({ postId, user, username, caption, imageUrl, timeStr }) {
                     </button>
                 </form>
             )}
-            <SimpleDialog  />
+            <DialogComponent  />
         </div>
     )
 }

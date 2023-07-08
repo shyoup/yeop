@@ -3,8 +3,7 @@ import './App.css';
 import Post from './Post'
 import { db, auth } from './firebase'
 import { makeStyles } from '@mui/material';
-import Modal from '@mui/material';
-import { Button, Input } from '@mui/material';
+import { Button, Input, Modal } from '@mui/material';
 import ImageUpload from './ImageUpload';
 
 function getModalStyle() {
