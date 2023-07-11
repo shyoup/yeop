@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Post from './Post'
 import { db, auth } from './firebase'
-import { makeStyles } from '@mui/material';
+import { makeStyles }  from '@mui/styles';
 import { Button, Input, Modal } from '@mui/material';
 import ImageUpload from './ImageUpload';
 
@@ -21,10 +21,11 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
     width: 400,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#fff',
+    // backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    boxShadow: 5,
+    padding: '2px 4px 3px',
   }
 }));
 
