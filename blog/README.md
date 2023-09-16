@@ -1,6 +1,8 @@
 # BLOG HISTORY 정리
 
 ## HISTORY
+2023.9.16 [[JavaScript] 함수와 클로저의 차이](https://sanghyeopsang.tistory.com/44)
+
 2023.9.11 [[JavaScript] ES6 화살표 함수(2)](https://sanghyeopsang.tistory.com/43)
 
 2022.5.12 [[JavaScript] ES6 화살표 함수](https://sanghyeopsang.tistory.com/42)
